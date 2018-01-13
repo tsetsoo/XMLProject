@@ -13,7 +13,7 @@
   <!ENTITY img10 SYSTEM "https://www.pro-bg.com/resize_image_max/800/600/GIGABYTE/Desktop-Motherboard-GIGABYTE-MotherboardGIGABYTEH110M-S2PVDDR3sock1151.jpg" NDATA jpg>
   <!NOTATION jpg PUBLIC "jpg">
 ]>
-<?xml-stylesheet type="text/xsl" href="index.xsl"?>
+<!-- <?xml-stylesheet type="text/xsl" href="index.xsl"?> -->
 
 <computer_parts_catalog xmlns="http://www.w3schools.com"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
