@@ -2,7 +2,7 @@ var xslDoc;
 var xmlDoc;
 var xmlHttpObject;
 // var sortKey = {'name', "category","expiration", "price", "stock"};
-var sortKey =  "price";
+var sortKey =  "available";
 var sortOrder = 'ascending'
 var sortType = 'number';
 
@@ -85,7 +85,7 @@ function sort(which)
   }
 
 
-  if ( sortKey == 'name' || sortKey == 'category' || sortKey == 'expiration' ) {
+  if ( sortKey == 'name' || sortKey == 'manufacturer' || sortKey == 'expiration' ) {
     sortType = 'text';
   }
   else {

@@ -27,18 +27,18 @@
 	<xsl:template name="create_header">
 		<tr>
 			<th>
-				<a href="javascript:sort('name')">Name</a>
+				<a href="javascript:sort('manufacturer')">Name</a>
 				<xsl:call-template name="show_sorting">
-					<xsl:with-param name="header" select="'name'" />
+					<xsl:with-param name="header" select="'manufacturer'" />
 				</xsl:call-template>
 			</th>
+			<th>Category</th>
 			<th>
-				<a href="javascript:sort('category')">Category</a>
+				<a href="javascript:sort('manufacturer')">Manufacturer</a>
 				<xsl:call-template name="show_sorting">
-					<xsl:with-param name="header" select="'category'" />
+					<xsl:with-param name="header" select="'manufacturer'" />
 				</xsl:call-template>
 			</th>
-			<th>Manufacturer</th>
 			<th>
 				<a href="javascript:sort('available')">Available</a>
 				<xsl:call-template name="show_sorting">
@@ -71,6 +71,7 @@
 		</xsl:for-each>
 	</xsl:template>
 	<xsl:template match="x:part_image"/>
+
 	<xsl:template match="x:processor | x:ram-stick | x:video-card | x:hard-drive | x:disk | x:motherboard">
 		<td>
 			<xsl:variable name="request_id">
