@@ -21,19 +21,19 @@
 		</xsl:if>
 	</xsl:for-each>
 </xsl:template>
-	<xsl:template match="x:part_image">
+<xsl:template match="x:part_image">
 	<xsl:if test="@part_id=$id">
 		<img alt="">
-		<xsl:attribute name="src">
-  			<xsl:value-of select="."/>
- 			</xsl:attribute>
+			<xsl:attribute name="src">
+				<xsl:value-of select="."/>
+			</xsl:attribute>
 		</img>
-			</xsl:if>
-	</xsl:template>
+	</xsl:if>
+</xsl:template>
 
 <xsl:template match="x:processor | x:ram-stick | x:video-card | x:hard-drive | x:disk | x:motherboard">
 	<ul class="characteristics center">
-			<!-- Uppercase first latter of category -->
+		<!-- Uppercase first latter of category -->
 		<xsl:variable name="firstChar" select="substring(name(.),1,1)"/>
 		<xsl:variable name="category">
 			<xsl:value-of select="translate($firstChar,'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
@@ -44,43 +44,58 @@
 			<b>
 				<xsl:value-of
 					select="concat(' ', x:manufacturer, ' ', x:family, ' ', x:model)" />
-			</b>
-		</li>
+				</b>
+			</li>
 
 			<xsl:for-each select="*">
-				<li>
-					<xsl:value-of select="concat( name(.), ': ', .)"/>
-				</li>
+				<xsl:choose>
+					<!-- count-childs -->
+					<xsl:when test="count(./*) > 0">
+						<ul>
+							<li><b><xsl:value-of select="name(.)"/></b></li>
+							<xsl:for-each select="*">
+								<li>
+									<xsl:value-of select="concat( name(.), ': ', .)"/>
+								</li>
+							</xsl:for-each>
+						</ul>
+					</xsl:when>
+					<xsl:otherwise>
+						<li>
+							<xsl:value-of select="concat( name(.), ': ', .)"/>
+						</li>
+					</xsl:otherwise>
+				</xsl:choose>
 			</xsl:for-each>
 			<!--  Bad IDEA -->
-		<!-- <li>Manufacturer: <xsl:value-of select="x:manufacturer" /></li>
-		<li>Price:<xsl:value-of select="x:price" /></li>
-		<li>Available:<xsl:value-of select="x:available" /></li>
-		<xsl:apply-templates select="." mode="other"/> -->
-	</ul>
-</xsl:template>
-<!-- BAD IDEA -->
-<!-- HERE are templates with mode other - for different info about each kind of product -->
-<!-- <xsl:template match="x:processor" mode="other">
+			<!-- <li>Manufacturer: <xsl:value-of select="x:manufacturer" /></li>
+			<li>Price:<xsl:value-of select="x:price" /></li>
+			<li>Available:<xsl:value-of select="x:available" /></li>
+			<xsl:apply-templates select="." mode="other"/> -->
+		</ul>
+	</xsl:template>
+	<!-- BAD IDEA -->
+	<!-- HERE are templates with mode other - for different info about each kind of product -->
+	<!-- <xsl:template match="x:processor" mode="other">
 	<li>architecture: <xsl:value-of select="x:architecture" /></li>
 	<li>Model: <xsl:value-of select="x:model" /></li>
 </xsl:template>
 <xsl:template match="x:ram-stick" mode="other">
-	<li>architecture: <xsl:value-of select="x:architecture" /></li>
-	<li>socket:<xsl:value-of select="x:socket" /></li>
+<li>architecture: <xsl:value-of select="x:architecture" /></li>
+<li>socket:<xsl:value-of select="x:socket" /></li>
 </xsl:template>
 <xsl:template match="x:video-card" mode="other">
-	<li>architecture: <xsl:value-of select="x:architecture" /></li>
-	<li>socket:<xsl:value-of select="x:socket" /></li>
+<li>architecture: <xsl:value-of select="x:architecture" /></li>
+<li>socket:<xsl:value-of select="x:socket" /></li>
 </xsl:template>
 <xsl:template match="x:disk" mode="other">
-	<li>interface: <xsl:value-of select="x:interface" /></li>
-	<li>Memory:<xsl:value-of select="concat(x:memory/type, x:memory/size, x:memory/speed)" /></li>
-	<li>Size:<xsl:value-of select="x:size" /></li>
+<li>interface: <xsl:value-of select="x:interface" /></li>
+<li>Memory:<xsl:value-of select="concat(x:memory/type, x:memory/size, x:memory/speed)" /></li>
+<li>Size:<xsl:value-of select="x:size" /></li>
 </xsl:template>
 <xsl:template match="x:motherboard" mode="other">
-	<li>Model: <xsl:value-of select="x:model" /></li>
-	<li>socket:<xsl:value-of select="x:socket" /></li>
+<li>Model: <xsl:value-of select="x:model" /></li>
+<li>socket:<xsl:value-of select="x:socket" /></li>
 </xsl:template> -->
 
 </xsl:stylesheet>
