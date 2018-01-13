@@ -5,7 +5,7 @@
 	xmlns:x="http://www.w3schools.com"
 	exclude-result-prefixes="x">
 
-	<!-- <xsl:key name="image-url" match="image" use="@id"/> TODO -->
+	<xsl:key name="image-urls" match="image" use="@id"/>
 
 	<xsl:param name="id">h1</xsl:param>
 
@@ -26,12 +26,13 @@
 
 <xsl:template match="x:processor | x:ram-stick | x:video-card | x:hard-drive | x:disk | x:motherboard">
 	<ul class="characteristics center">
-<!--  TODO
-  <xsl:for-each select="key('image-url', $id )">
+ <li>
+  <xsl:for-each select="key('image-urls', 'p1' )">
+		<p>he</p>
 		<img src="@href" style="max-height: 200px"/>
-
 		<xsl:value-of select="@href"/>
-  </xsl:for-each> -->
+  </xsl:for-each>
+</li>
 			<!-- Uppercase first latter of category -->
 		<xsl:variable name="firstChar" select="substring(name(.),1,1)"/>
 		<xsl:variable name="category">
