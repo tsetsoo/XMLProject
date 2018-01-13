@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE computer_parts_catalog [
+  <!ENTITY img1 SYSTEM "https://www.pro-bg.com/resize_image_max/800/600/INTEL/CPU-INTEL-BX80684I78700SR3QS.jpg" NDATA jpg>
+  <!ENTITY img2 SYSTEM "https://www.pro-bg.com/resize_image_max/800/600/AMD/CPU-AMD-YD180XBCAEWOF.jpg" NDATA jpg>
+  <!ENTITY img3 SYSTEM "https://www.pro-bg.com/resize_image_max/800/600/CORSAIR/New-CORSAIR-CMR16GX4M2C3200C16.png" NDATA jpg>
+  <!ENTITY img4 SYSTEM "https://www.pro-bg.com/resize_image_max/800/600/KINGSTON/Random-Access-Memory-Memory-Kingston-HyperX-Predator-16GB-2x8GB--DDR4-.jpg" NDATA jpg>
+  <!ENTITY img5 SYSTEM "https://www.pro-bg.com/resize_image_max/800/600/XFX/Videocard-XFX-RX-580P4DFD6.jpg" NDATA jpg>
+  <!ENTITY img6 SYSTEM "https://www.pro-bg.com/resize_image_max/800/600/PALIT/Videocard-PALIT-4710636269318.jpg" NDATA jpg>
+  <!ENTITY img7 SYSTEM "https://www.pro-bg.com/resize_image_max/800/600/WESTERN%20DIGITAL/HDD-WESTERN%20DIGITAL-WDS250G1B0B.jpg" NDATA jpg>
+  <!ENTITY img8 SYSTEM "https://www.pro-bg.com/resize_image_max/800/600/PROBG/HDD-SAMSUNG-MZ-V6E1T0BW.jpg" NDATA jpg>
+  <!ENTITY img9 SYSTEM "https://www.pro-bg.com/resize_image_max/800/600/MSI/New-MSI-X99A-GODLIKE-GAMING-CARBON.jpg" NDATA jpg>
+  <!ENTITY img10 SYSTEM "https://www.pro-bg.com/resize_image_max/800/600/GIGABYTE/Desktop-Motherboard-GIGABYTE-MotherboardGIGABYTEH110M-S2PVDDR3sock1151.jpg" NDATA jpg>
+  <!NOTATION jpg PUBLIC "jpg">
+]>
+<?xml-stylesheet type="text/xsl" href="16_61913_855271_xslt.xsl"?>
+
+<computer_parts_catalog xmlns="http://www.w3schools.com"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.w3schools.com 18_61534_61488_xsd.xsd">
+
+      <parts>
+        <processors>
+            <processor id="p1">
+                <manufacturer>Intel</manufacturer>
+                <family>i7</family>
+                <architecture>Coffee Lake</architecture>
+                <model>8700k</model>
+                <socket>LGA1151</socket>
+                <clock-frequency>3200MHz</clock-frequency>
+                <cache>
+                    <level>3</level>
+                    <memory-mb>12</memory-mb>
+                </cache>
+                <threads>
+                    <physical>6</physical>
+                    <logical>12</logical>
+                </threads>
+                <available>1</available>
+                <price>644.49 лв.</price>
+            </processor>
+            <processor id="p2">
+                <manufacturer>AMD</manufacturer>
+                <family>Ryzen 7</family>
+                <architecture>Zen</architecture>
+                <model>1800x</model>
+                <socket>AM4</socket>
+                <clock-frequency>4000MHz</clock-frequency>
+                <cache>
+                    <level>3</level>
+                    <memory-mb>16</memory-mb>
+                </cache>
+                <threads>
+                    <physical>8</physical>
+                    <logical>16</logical>
+                </threads>
+                <available>2</available>
+                <price>940.26 лв.</price>
+            </processor>
+        </processors>
+        
+        <ram-sticks>
+            <ram-stick id="p3">
+                <manufacturer>Corsair</manufacturer>
+                <model>VENGEANCE® RGB</model>
+                <memory>
+                  <type>DDR4</type>
+                  <size>16GB</size>
+                  <speed>3200 MHz</speed>
+                </memory>
+                <available>3</available>
+                <price>467.51 лв.</price>
+            </ram-stick>
+            <ram-stick id="p4">
+                <manufacturer>Kingston</manufacturer>
+                <model>HyperX Predator</model>                
+                <memory>
+                  <type>DDR4</type>
+                  <size>16GB</size>
+                  <speed>3333 MHz</speed>
+                </memory>
+                <available>4</available>
+                <price>438.96 лв.</price>
+            </ram-stick>
+        </ram-sticks>
+        
+        
+        <video-cards>
+            <video-card id="p5">
+                <manufacturer>XFX</manufacturer>
+                <chipset>AMD Radeon RX 580</chipset>
+                <GPU>Polaris 20</GPU>
+                <memory>
+                  <type>GDDR5</type>
+                  <size>4GB</size>
+                  <speed>7100 MHz</speed>
+                </memory>
+                <clock-frequency>1366MHz</clock-frequency>
+                <bus-width>256 bit</bus-width>
+                <texture-fill-rate>193 GT/s</texture-fill-rate>
+                <pixel-fill-rate>42.9 GP/s</pixel-fill-rate>
+                <available>3</available>
+                <price>794.40 лв.</price>
+            </video-card>
+            <video-card id="p6">
+                <manufacturer>Palit</manufacturer>
+                <chipset>Nvidia GeForce GTX 1060</chipset>
+                <GPU>Pascal GP-106</GPU>
+                <memory>
+                  <type>GDDR5</type>
+                  <size>3GB</size>
+                  <speed>8000 MHz</speed>
+                </memory>
+                <clock-frequency>1620MHz-1847MHz</clock-frequency>
+                <bus-width>192 bit</bus-width>
+                <texture-fill-rate>193 GT/s</texture-fill-rate>
+                <pixel-fill-rate>42.9 GP/s</pixel-fill-rate>
+                <available>3</available>
+                <price>499.91 лв.</price>
+            </video-card>
+        </video-cards>
+        
+        <disks>
+            <disk id="p7">
+                <manufacturer>Western Digital</manufacturer>
+                <interface>M.2</interface>
+                <memory>
+                  <type>SSD</type>
+                  <size>256GB</size>
+                  <speed>SATA3 SSD</speed>
+                </memory>
+                <size>2.5 inch</size>                
+                <available>3</available>
+                <price>178.30 лв.</price>
+            </disk>
+            <disk id="p8">
+                <manufacturer>Samsung</manufacturer>
+                <interface>M.2</interface>
+                <memory>
+                  <type>SSD</type>
+                  <size>1000GB</size>
+                  <speed>NVMe SSD</speed>
+                </memory>
+                <size>PCIe Stick</size>                
+                <available>3</available>
+                <price>981.61 лв.</price>
+            </disk>
+        </disks>
+        
+        <motherboards>
+            <motherboard id="p9">
+                <manufacturer>MSI</manufacturer>
+                <model>X99</model>
+                <socket>LGA2011</socket>
+                <available>3</available>
+                <price>1019.49 лв.</price>
+            </motherboard>
+            <motherboard id="p10">
+                <manufacturer>GIGABYTE</manufacturer>
+                <model>Z270X</model>
+                <socket>LGA1151</socket>
+                <available>3</available>
+                <price>1100.19 лв.</price>
+            </motherboard>
+        </motherboards>
+    </parts>
+  
+  <images>
+    <image id="i1" href="img1"/>
+    <image id="i2" href="img2"/>
+    <image id="i3" href="img3"/>
+    <image id="i4" href="img4"/>
+    <image id="i5" href="img5"/>
+    <image id="i6" href="img6"/>
+    <image id="i7" href="img7"/>
+    <image id="i8" href="img8"/>
+    <image id="i9" href="img9"/>
+    <image id="i10" href="img10"/>
+  </images>
+  
+  <gallery>
+    <part_image part_id="p1" image_id="i1" />
+    <part_image part_id="p2" image_id="i2" />
+    <part_image part_id="p3" image_id="i3" />
+    <part_image part_id="p4" image_id="i4" />
+    <part_image part_id="p5" image_id="i5" />
+    <part_image part_id="p6" image_id="i6" />
+    <part_image part_id="p7" image_id="i7" />
+    <part_image part_id="p8" image_id="i8" />
+    <part_image part_id="п9" image_id="i9" />
+    <part_image part_id="p10" image_id="i10" />
+  </gallery>
+
+</computer_parts_catalog>

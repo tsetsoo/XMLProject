@@ -1,0 +1,191 @@
+
+
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.w3schools.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="level" type="xs:byte"/>
+  <xs:element name="memory-mb" type="xs:byte"/>
+  <xs:element name="physical" type="xs:byte"/>
+  <xs:element name="logical" type="xs:byte"/>
+  <xs:element name="manufacturer" type="xs:string"/>
+  <xs:element name="family" type="xs:string"/>
+  <xs:element name="architecture" type="xs:string"/>
+  <xs:element name="model" type="xs:string"/>
+  <xs:element name="socket" type="xs:string"/>
+  <xs:element name="clock-frequency" type="xs:string"/>
+  <xs:element name="cache">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="w3s:level" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:memory-mb" xmlns:w3s="http://www.w3schools.com"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="threads">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="w3s:physical" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:logical" xmlns:w3s="http://www.w3schools.com"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="available" type="xs:byte"/>
+  <xs:element name="price" type="xs:string"/>
+  <xs:element name="processor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="w3s:manufacturer" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:family" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:architecture" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:model" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:socket" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:clock-frequency" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:cache" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:threads" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:available" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:price" xmlns:w3s="http://www.w3schools.com"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="id" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="type" type="xs:string"/>
+  <xs:element name="size" type="xs:string"/>
+  <xs:element name="speed" type="xs:string"/>
+  <xs:element name="memory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="w3s:type" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:size" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:speed" xmlns:w3s="http://www.w3schools.com"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ram-stick">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="w3s:manufacturer" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:model" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:memory" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:available" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:price" xmlns:w3s="http://www.w3schools.com"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="id" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="chipset" type="xs:string"/>
+  <xs:element name="GPU" type="xs:string"/>
+  <xs:element name="bus-width" type="xs:string"/>
+  <xs:element name="texture-fill-rate" type="xs:string"/>
+  <xs:element name="pixel-fill-rate" type="xs:string"/>
+  <xs:element name="video-card">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="w3s:manufacturer" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:chipset" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:GPU" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:memory" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:clock-frequency" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:bus-width" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:texture-fill-rate" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:pixel-fill-rate" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:available" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:price" xmlns:w3s="http://www.w3schools.com"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="id" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="interface" type="xs:string"/>
+  <xs:element name="disk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="w3s:manufacturer" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:interface" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:memory" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:size" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:available" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:price" xmlns:w3s="http://www.w3schools.com"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="id" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="motherboard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="w3s:manufacturer" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:model" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:socket" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:available" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:price" xmlns:w3s="http://www.w3schools.com"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="id" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="processors">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="w3s:processor" maxOccurs="unbounded" minOccurs="0" xmlns:w3s="http://www.w3schools.com"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ram-sticks">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="w3s:ram-stick" maxOccurs="unbounded" minOccurs="0" xmlns:w3s="http://www.w3schools.com"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="video-cards">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="w3s:video-card" maxOccurs="unbounded" minOccurs="0" xmlns:w3s="http://www.w3schools.com"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="disks">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="w3s:disk" maxOccurs="unbounded" minOccurs="0" xmlns:w3s="http://www.w3schools.com"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="motherboards">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="w3s:motherboard" maxOccurs="unbounded" minOccurs="0" xmlns:w3s="http://www.w3schools.com"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="image">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="id" use="required
+  "/>
+          <xs:attribute type="xs:string" name="href" use="required
+  "/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="part_image">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="part_id" use="required
+  "/>
+          <xs:attribute type="xs:string" name="image_id" use="required
+  "/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="parts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="w3s:processors" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:ram-sticks" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:video-cards" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:disks" xmlns:w3s="http://www.w3schools.com"/>
+        <xs:element ref="w3s:motherboards" xmlns:w3s="http://www.w3schools.com"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
