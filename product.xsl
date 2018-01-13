@@ -66,35 +66,6 @@
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:for-each>
-			<!--  Bad IDEA -->
-			<!-- <li>Manufacturer: <xsl:value-of select="x:manufacturer" /></li>
-			<li>Price:<xsl:value-of select="x:price" /></li>
-			<li>Available:<xsl:value-of select="x:available" /></li>
-			<xsl:apply-templates select="." mode="other"/> -->
-		</ul>
+			</ul>
 	</xsl:template>
-	<!-- BAD IDEA -->
-	<!-- HERE are templates with mode other - for different info about each kind of product -->
-	<!-- <xsl:template match="x:processor" mode="other">
-	<li>architecture: <xsl:value-of select="x:architecture" /></li>
-	<li>Model: <xsl:value-of select="x:model" /></li>
-</xsl:template>
-<xsl:template match="x:ram-stick" mode="other">
-<li>architecture: <xsl:value-of select="x:architecture" /></li>
-<li>socket:<xsl:value-of select="x:socket" /></li>
-</xsl:template>
-<xsl:template match="x:video-card" mode="other">
-<li>architecture: <xsl:value-of select="x:architecture" /></li>
-<li>socket:<xsl:value-of select="x:socket" /></li>
-</xsl:template>
-<xsl:template match="x:disk" mode="other">
-<li>interface: <xsl:value-of select="x:interface" /></li>
-<li>Memory:<xsl:value-of select="concat(x:memory/type, x:memory/size, x:memory/speed)" /></li>
-<li>Size:<xsl:value-of select="x:size" /></li>
-</xsl:template>
-<xsl:template match="x:motherboard" mode="other">
-<li>Model: <xsl:value-of select="x:model" /></li>
-<li>socket:<xsl:value-of select="x:socket" /></li>
-</xsl:template> -->
-
 </xsl:stylesheet>

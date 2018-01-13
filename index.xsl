@@ -40,9 +40,9 @@
 			</th>
 			<th>Manufacturer</th>
 			<th>
-				<a href="javascript:sort('stock')">Stock</a>
+				<a href="javascript:sort('available')">Available</a>
 				<xsl:call-template name="show_sorting">
-					<xsl:with-param name="header" select="'stock'" />
+					<xsl:with-param name="header" select="'available'" />
 				</xsl:call-template>
 			</th>
 			<th>
