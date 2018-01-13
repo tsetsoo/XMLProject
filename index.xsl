@@ -5,12 +5,17 @@
 	xmlns:x="http://www.w3schools.com"
 	exclude-result-prefixes="x">
 
-	<xsl:param name="sortKey-processors">available</xsl:param>
-	<xsl:param name="sortOrder-processors">ascending</xsl:param>
-	<xsl:param name="sortType-processors">number</xsl:param>
-
+	<xsl:param name="sortKey">available</xsl:param>
+	<xsl:param name="sortOrder">ascending</xsl:param>
+	<xsl:param name="sortType">number</xsl:param>
+	<!--
+	https://msdn.microsoft.com/en-us/library/ms950787.aspx
+	   <first_name><xsl:value-of select="$first_name"/></first_name>
+	   <last_name><xsl:value-of select="$last_name"/></last_name>
+	   <vocation><xsl:value-of select="$vocation"/></vocation> -->
 	<xsl:param name="sortData">
 		<processors>
+
 				<sortKey>available</sortKey>
 				<sortOrder>ascending</sortOrder>
 				<sortType>number</sortType>
@@ -30,6 +35,8 @@
 			</thead>
 			<!-- <xsl:apply-templates select="*" /> -->
 			<xsl:for-each select="*">
+				<!--  TODO how to get $sortData/processors/sortKey?-->
+				<p> <xsl:value-of select="$sortData/processors"/></p>
 				<!-- <xsl:sort select="*[name(.)=$sortKey]|@*[name(.)=$sortKey]|x:price/*[name(.)=$sortKey]" order="{$sortOrder}" data-type="{$sortType}" /> -->
 				<!-- <tr> -->
 				<!-- <xsl:value-of select="$sortData"/> -->
@@ -94,7 +101,7 @@
 			</xsl:call-template>
 		</thead>
 		<xsl:for-each select="x:processor | x:ram-stick | x:video-card | x:hard-drive | x:disk | x:motherboard">
-			<xsl:sort select="*[name(.)=$sortKey-processors]|@*[name(.)=$sortKey-processors]" order="{$sortOrder}" data-type="{$sortType}" />
+			<xsl:sort select="*[name(.)=$sortData/processors/sortKey]|@*[name(.)=$sortData/processors/sortKey]" order="{$sortOrder}" data-type="{$sortType}" />
 			<tr>
 				<xsl:apply-templates select="." />
 			</tr>
