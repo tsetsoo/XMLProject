@@ -13,11 +13,11 @@
   <!ENTITY img10 SYSTEM "https://www.pro-bg.com/resize_image_max/800/600/GIGABYTE/Desktop-Motherboard-GIGABYTE-MotherboardGIGABYTEH110M-S2PVDDR3sock1151.jpg" NDATA jpg>
   <!NOTATION jpg PUBLIC "jpg">
 ]>
-<?xml-stylesheet type="text/xsl" href="16_61913_855271_xslt.xsl"?>
+<?xml-stylesheet type="text/xsl" href="index.xsl"?>
 
 <computer_parts_catalog xmlns="http://www.w3schools.com"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.w3schools.com 18_61534_61488_xsd.xsd">
+        xsi:schemaLocation="http://www.w3schools.com test.xsd">
 
       <parts>
         <processors>
@@ -58,7 +58,7 @@
                 <price>940.26 лв.</price>
             </processor>
         </processors>
-        
+
         <ram-sticks>
             <ram-stick id="p3">
                 <manufacturer>Corsair</manufacturer>
@@ -73,7 +73,7 @@
             </ram-stick>
             <ram-stick id="p4">
                 <manufacturer>Kingston</manufacturer>
-                <model>HyperX Predator</model>                
+                <model>HyperX Predator</model>
                 <memory>
                   <type>DDR4</type>
                   <size>16GB</size>
@@ -83,8 +83,8 @@
                 <price>438.96 лв.</price>
             </ram-stick>
         </ram-sticks>
-        
-        
+
+
         <video-cards>
             <video-card id="p5">
                 <manufacturer>XFX</manufacturer>
@@ -119,7 +119,7 @@
                 <price>499.91 лв.</price>
             </video-card>
         </video-cards>
-        
+
         <disks>
             <disk id="p7">
                 <manufacturer>Western Digital</manufacturer>
@@ -129,7 +129,7 @@
                   <size>256GB</size>
                   <speed>SATA3 SSD</speed>
                 </memory>
-                <size>2.5 inch</size>                
+                <size>2.5 inch</size>
                 <available>3</available>
                 <price>178.30 лв.</price>
             </disk>
@@ -141,12 +141,12 @@
                   <size>1000GB</size>
                   <speed>NVMe SSD</speed>
                 </memory>
-                <size>PCIe Stick</size>                
+                <size>PCIe Stick</size>
                 <available>3</available>
                 <price>981.61 лв.</price>
             </disk>
         </disks>
-        
+
         <motherboards>
             <motherboard id="p9">
                 <manufacturer>MSI</manufacturer>
@@ -164,7 +164,7 @@
             </motherboard>
         </motherboards>
     </parts>
-  
+
   <images>
     <image id="i1" href="img1"/>
     <image id="i2" href="img2"/>
@@ -177,7 +177,7 @@
     <image id="i9" href="img9"/>
     <image id="i10" href="img10"/>
   </images>
-  
+
   <gallery>
     <part_image part_id="p1" image_id="i1" />
     <part_image part_id="p2" image_id="i2" />

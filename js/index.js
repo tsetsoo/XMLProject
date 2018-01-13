@@ -24,7 +24,7 @@ function getStyleSheet()
 {
     xmlHttpObject = CreateXmlHttpRequestObject();
     try {
-        xmlHttpObject.open('GET', 'test.xsl', false);
+        xmlHttpObject.open('GET', 'index.xsl', false);
         xmlHttpObject.send(null);
     } catch (e) {
         alert('Try to open with Firefox or other browser with different security settings.');

@@ -73,15 +73,12 @@
 
 	<xsl:template match="x:processor | x:ram-stick | x:video-card | x:hard-drive | x:disk | x:motherboard">
 		<td>
-			<xsl:variable name="URL">
-					<xsl:value-of select="@url"/>
-			</xsl:variable>
 			<xsl:variable name="request_id">
 					<xsl:value-of select="@id"/>
 			</xsl:variable>
-			<a href="{$URL}?id={$request_id}">
+			<a href="product.html?id={$request_id}">
 	      		<xsl:value-of select="concat(x:manufacturer, ' ', x:family, ' ', x:model)" />
-	 			</a>
+ 			</a>
 	  		<!-- <br /> -->
   	</td>
 		<!-- Uppercase first latter of category -->
