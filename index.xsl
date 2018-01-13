@@ -70,7 +70,7 @@
 			</tr>
 		</xsl:for-each>
 	</xsl:template>
-
+	<xsl:template match="x:part_image"/>
 	<xsl:template match="x:processor | x:ram-stick | x:video-card | x:hard-drive | x:disk | x:motherboard">
 		<td>
 			<xsl:variable name="request_id">
