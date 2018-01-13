@@ -35,7 +35,7 @@
                 <price></price>
             </processor>
         </processors>
-        
+
         <ram-sticks>
             <ram-stick id="p3">
                 <manufacturer></manufacturer>
@@ -49,8 +49,8 @@
                 <price></price>
             </ram-stick>
         </ram-sticks>
-        
-        
+
+
         <video-cards>
             <video-card id="p3">
                 <manufacturer></manufacturer>
@@ -69,7 +69,7 @@
                 <price></price>
             </video-card>
         </video-cards>
-        
+
         <disks>
             <disk id="p4">
                 <manufacturer></manufacturer>
@@ -79,12 +79,12 @@
                   <size></size>
                   <speed></speed>
                 </memory>
-                <size></size>                
+                <size></size>
                 <available></available>
                 <price></price>
             </disk>
         </disks>
-        
+
         <motherboards>
             <motherboard id="p5">
                 <manufacturer></manufacturer>
@@ -95,7 +95,7 @@
             </motherboard>
         </motherboards>
     </parts>
-  
+
   <images>
     <image id="i1" href="img1"/>
     <image id="i2" href="img2"/>
@@ -103,7 +103,7 @@
     <image id="i4" href="img4"/>
     <image id="i5" href="img5"/>
   </images>
-  
+
   <gallery>
     <part_image part_id="p1" image_id="i1" />
     <part_image part_id="p2" image_id="i2" />

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <xsl:stylesheet	version="1.0"
-				xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-				xmlns:x="http://www.w3schools.com"
-				exclude-result-prefixes="x">
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:x="http://www.w3schools.com"
+	exclude-result-prefixes="x">
 
 	<xsl:param name="sortKey">stock</xsl:param>
 	<xsl:param name="sortOrder">ascending</xsl:param>
@@ -18,40 +18,40 @@
 			<xsl:for-each select="*">
 				<xsl:sort select="*[name(.)=$sortKey]|@*[name(.)=$sortKey]|x:price/*[name(.)=$sortKey]" order="{$sortOrder}" data-type="{$sortType}" />
 				<!-- <tr> -->
-					<xsl:apply-templates select="." />
+				<xsl:apply-templates select="." />
 				<!-- </tr> -->
 			</xsl:for-each>
 		</table>
 	</xsl:template>
 
 	<xsl:template name="create_header">
-	<tr>
-		<th>
-			<a href="javascript:sort('name')">Name</a>
-			<xsl:call-template name="show_sorting">
-				<xsl:with-param name="header" select="'name'" />
-			</xsl:call-template>
-		</th>
-		<th>
-			<a href="javascript:sort('category')">Category</a>
-			<xsl:call-template name="show_sorting">
-				<xsl:with-param name="header" select="'category'" />
-			</xsl:call-template>
-		</th>
-		<th>Manufacturer</th>
-		<th>
-			<a href="javascript:sort('stock')">Stock</a>
-			<xsl:call-template name="show_sorting">
-				<xsl:with-param name="header" select="'stock'" />
-			</xsl:call-template>
-		</th>
-		<th>
-			<a href="javascript:sort('price')">Price</a>
-			<xsl:call-template name="show_sorting">
-				<xsl:with-param name="header" select="'price'" />
-			</xsl:call-template>
-		</th>
-	</tr>
+		<tr>
+			<th>
+				<a href="javascript:sort('name')">Name</a>
+				<xsl:call-template name="show_sorting">
+					<xsl:with-param name="header" select="'name'" />
+				</xsl:call-template>
+			</th>
+			<th>
+				<a href="javascript:sort('category')">Category</a>
+				<xsl:call-template name="show_sorting">
+					<xsl:with-param name="header" select="'category'" />
+				</xsl:call-template>
+			</th>
+			<th>Manufacturer</th>
+			<th>
+				<a href="javascript:sort('stock')">Stock</a>
+				<xsl:call-template name="show_sorting">
+					<xsl:with-param name="header" select="'stock'" />
+				</xsl:call-template>
+			</th>
+			<th>
+				<a href="javascript:sort('price')">Price</a>
+				<xsl:call-template name="show_sorting">
+					<xsl:with-param name="header" select="'price'" />
+				</xsl:call-template>
+			</th>
+		</tr>
 	</xsl:template>
 
 	<xsl:template name="show_sorting">
@@ -74,13 +74,13 @@
 	<xsl:template match="x:processor | x:ram-stick | x:video-card | x:hard-drive | x:disk | x:motherboard">
 		<td>
 			<xsl:variable name="request_id">
-					<xsl:value-of select="@id"/>
+				<xsl:value-of select="@id"/>
 			</xsl:variable>
 			<a href="product.html?id={$request_id}">
-	      		<xsl:value-of select="concat(x:manufacturer, ' ', x:family, ' ', x:model)" />
- 			</a>
-	  		<!-- <br /> -->
-  	</td>
+				<xsl:value-of select="concat(x:manufacturer, ' ', x:family, ' ', x:model)" />
+			</a>
+			<!-- <br /> -->
+		</td>
 		<!-- Uppercase first latter of category -->
 		<xsl:variable name="firstChar" select="substring(name(.),1,1)"/>
 		<xsl:variable name="Category">
