@@ -23,7 +23,7 @@
 </xsl:template>
 <xsl:template match="x:part_image">
 	<xsl:if test="@part_id=$id">
-		<img style="max-height: 200px;" alt="">
+		<img class="product-image" alt="">
 			<xsl:attribute name="src">
 				<xsl:value-of select="."/>
 			</xsl:attribute>
