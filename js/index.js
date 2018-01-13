@@ -5,6 +5,34 @@ var xmlHttpObject;
 var sortKey =  "available";
 var sortOrder = 'ascending'
 var sortType = 'number';
+/*
+var sortData = {
+  'processors' : {
+    sortKey: 'available',
+    sortOrder: 'ascending',
+    sortType: 'number',
+  },
+  'ram-sticks' : {
+    sortKey: 'available',
+    sortOrder: 'ascending',
+    sortType: 'number',
+  },
+  'video-cards' : {
+    sortKey: 'available',
+    sortOrder: 'ascending',
+    sortType: 'number',
+  },
+  'disks' : {
+    sortKey: 'available',
+    sortOrder: 'ascending',
+    sortType: 'number',
+  },
+  'motherboards' : {
+    sortKey: 'available',
+    sortOrder: 'ascending',
+    sortType: 'number',
+  },
+}*/
 
 function CreateXmlHttpRequestObject()
 {
@@ -54,13 +82,17 @@ function doTranslation()
   try {
     var processor = new XSLTProcessor();
     processor.importStylesheet(xslDoc);
-    processor.setParameter(null, 'sortKey', sortKey);
-    processor.setParameter(null, 'sortOrder', sortOrder);
-    processor.setParameter(null, 'sortType', sortType);
+    // for (var key in sortData) {
+    //   console.log(key, sortData[key]);
+    //   processor.setParameter(null, 'sortKey-'+key, sortKey);
+    //   processor.setParameter(null, 'sortOrder-'+key, sortOrder);
+    //   processor.setParameter(null, 'sortType-'+key, sortType);
+    //
+    // }
+
+    // processor.setParameter(null, 'sortData', sortData);
     var newDocument = processor.transformToDocument(xmlDoc);
     document.getElementById('table').innerHTML = new XMLSerializer().serializeToString(newDocument);
-    console.log(xmlDoc);
-
   } catch (e) {
     alert('error with translation');
   }
@@ -75,26 +107,30 @@ function initialize()
 }
 
 
-function sort(which)
+function sort(which, category)
 {
-  if (sortKey == which) {
-    sortOrder = (sortOrder == 'ascending') ? 'descending' : 'ascending';
+  sortData = xsltProcessor.getParameter(null, "sortData");
+  console.log(sortData);
+  // console.log(category);
+  if (sortData[category].sortKey == which) {
+    sortData[category].sortOrder = (sortData[category].sortOrder == 'ascending') ? 'descending' : 'ascending';
   } else {
-    sortKey = which;
-    sortOrder = 'ascending';
+    sortData[category].sortKey = which;
+    sortData[category].sortOrder = 'ascending';
   }
 
 
-  if ( sortKey == 'name' || sortKey == 'manufacturer' || sortKey == 'expiration' ) {
-    sortType = 'text';
+  if ( sortData[category].sortKey == 'name' || sortData[category].sortKey == 'manufacturer' || sortData[category].sortKey == 'expiration' ) {
+    sortData[category].sortType = 'text';
   }
   else {
-    sortType = 'number';
+    sortData[category].sortType = 'number';
   }
+  // console.log(sortData);
 
-  console.log(sortKey);
-  console.log(sortOrder);
-  console.log(sortType);
+  //console.log(sortKey);
+  // console.log(sortOrder);
+  // console.log(sortType);
   // for (var i = sortKey.length - 1; i >= 0; i--) {
   //     sortKey[i]
   //     switch (sortKey[i]) {

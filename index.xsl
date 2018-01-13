@@ -5,19 +5,34 @@
 	xmlns:x="http://www.w3schools.com"
 	exclude-result-prefixes="x">
 
-	<xsl:param name="sortKey">available</xsl:param>
-	<xsl:param name="sortOrder">ascending</xsl:param>
-	<xsl:param name="sortType">number</xsl:param>
+	<xsl:param name="sortKey-processors">available</xsl:param>
+	<xsl:param name="sortOrder-processors">ascending</xsl:param>
+	<xsl:param name="sortType-processors">number</xsl:param>
+
+	<xsl:param name="sortData">
+		<processors>
+				<sortKey>available</sortKey>
+				<sortOrder>ascending</sortOrder>
+				<sortType>number</sortType>
+		</processors>
+		<video-cards>
+				<sortKey>available</sortKey>
+				<sortOrder>ascending</sortOrder>
+				<sortType>number</sortType>
+		</video-cards>
+
+	</xsl:param>
 
 	<xsl:template match="/">
 		<table border="0" class="sortable">
 			<thead>
-				<xsl:call-template name="create_header" />
+				<!-- <xsl:call-template name="create_header" /> -->
 			</thead>
 			<!-- <xsl:apply-templates select="*" /> -->
 			<xsl:for-each select="*">
 				<!-- <xsl:sort select="*[name(.)=$sortKey]|@*[name(.)=$sortKey]|x:price/*[name(.)=$sortKey]" order="{$sortOrder}" data-type="{$sortType}" /> -->
 				<!-- <tr> -->
+				<!-- <xsl:value-of select="$sortData"/> -->
 				<xsl:apply-templates select="." />
 				<!-- </tr> -->
 			</xsl:for-each>
@@ -25,27 +40,28 @@
 	</xsl:template>
 
 	<xsl:template name="create_header">
+		<xsl:param name="category" />
 		<tr>
 			<th>
-				<a href="javascript:sort('manufacturer')">Name</a>
+				<a href="javascript:sort('manufacturer', '{$category}')">Name</a>
 				<xsl:call-template name="show_sorting">
 					<xsl:with-param name="header" select="'manufacturer'" />
 				</xsl:call-template>
 			</th>
 			<th>
-				<a href="javascript:sort('manufacturer')">Manufacturer</a>
+				<a href="javascript:sort('manufacturer', '{$category}')">Manufacturer</a>
 				<xsl:call-template name="show_sorting">
 					<xsl:with-param name="header" select="'manufacturer'" />
 				</xsl:call-template>
 			</th>
 			<th>
-				<a href="javascript:sort('available')">Available</a>
+				<a href="javascript:sort('available', '{$category}')">Available</a>
 				<xsl:call-template name="show_sorting">
 					<xsl:with-param name="header" select="'available'" />
 				</xsl:call-template>
 			</th>
 			<th>
-				<a href="javascript:sort('price')">Price</a>
+				<a href="javascript:sort('price', '{$category}')">Price</a>
 				<xsl:call-template name="show_sorting">
 					<xsl:with-param name="header" select="'price'" />
 				</xsl:call-template>
@@ -72,8 +88,13 @@
 			<td><xsl:value-of select="$Category"/></td>
 			<td></td><td></td><td></td>
 		</tr>
+		<thead>
+			<xsl:call-template name="create_header">
+				<xsl:with-param name="category" select="name(.)"/>
+			</xsl:call-template>
+		</thead>
 		<xsl:for-each select="x:processor | x:ram-stick | x:video-card | x:hard-drive | x:disk | x:motherboard">
-			<xsl:sort select="*[name(.)=$sortKey]|@*[name(.)=$sortKey]" order="{$sortOrder}" data-type="{$sortType}" />
+			<xsl:sort select="*[name(.)=$sortKey-processors]|@*[name(.)=$sortKey-processors]" order="{$sortOrder}" data-type="{$sortType}" />
 			<tr>
 				<xsl:apply-templates select="." />
 			</tr>
