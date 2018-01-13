@@ -4,3 +4,7 @@ td, th {
 a:hover{
   color: #004a6e !important;
 }
+
+tr.dark {
+  background-color: #f2f2f2;
+}

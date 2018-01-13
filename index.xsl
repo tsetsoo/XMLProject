@@ -10,7 +10,7 @@
 	<xsl:param name="sortType">number</xsl:param>
 
 	<xsl:template match="/">
-		<table border="0" class="sortable striped">
+		<table border="0" class="sortable">
 			<thead>
 				<xsl:call-template name="create_header" />
 			</thead>
@@ -32,7 +32,6 @@
 					<xsl:with-param name="header" select="'manufacturer'" />
 				</xsl:call-template>
 			</th>
-			<th>Category</th>
 			<th>
 				<a href="javascript:sort('manufacturer')">Manufacturer</a>
 				<xsl:call-template name="show_sorting">
@@ -63,6 +62,16 @@
 	</xsl:template>
 
 	<xsl:template match="x:processors | x:ram-sticks | x:video-cards | x:hard-drives | x:disks | x:motherboards">
+		<tr class="dark">
+			<!-- Category name  -->
+			<xsl:variable name="firstChar" select="substring(name(.),1,1)"/>
+			<xsl:variable name="Category">
+				<xsl:value-of select="translate($firstChar,'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
+				<xsl:value-of select="substring-after(name(.),$firstChar)"/>
+			</xsl:variable>
+			<td><xsl:value-of select="$Category"/></td>
+			<td></td><td></td><td></td>
+		</tr>
 		<xsl:for-each select="x:processor | x:ram-stick | x:video-card | x:hard-drive | x:disk | x:motherboard">
 			<xsl:sort select="*[name(.)=$sortKey]|@*[name(.)=$sortKey]" order="{$sortOrder}" data-type="{$sortType}" />
 			<tr>
@@ -82,13 +91,6 @@
 			</a>
 			<!-- <br /> -->
 		</td>
-		<!-- Uppercase first latter of category -->
-		<xsl:variable name="firstChar" select="substring(name(.),1,1)"/>
-		<xsl:variable name="Category">
-			<xsl:value-of select="translate($firstChar,'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
-			<xsl:value-of select="substring-after(name(.),$firstChar)"/>
-		</xsl:variable>
-		<td><xsl:value-of select="$Category"/></td>
 		<td><xsl:value-of select="x:manufacturer" /></td>
 		<!-- <td><xsl:value-of select="x:model" /></td> -->
 		<td><xsl:value-of select="x:available" /></td>
