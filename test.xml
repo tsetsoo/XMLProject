@@ -8,7 +8,7 @@
   <!ENTITY img4 "https://www.pro-bg.com/resize_image_max/800/600/KINGSTON/Random-Access-Memory-Memory-Kingston-HyperX-Predator-16GB-2x8GB--DDR4-.jpg">
   <!ENTITY img5 "https://www.pro-bg.com/resize_image_max/800/600/XFX/Videocard-XFX-RX-580P4DFD6.jpg">
   <!ENTITY img6 "https://www.pro-bg.com/resize_image_max/800/600/PALIT/Videocard-PALIT-4710636269318.jpg">
-
+  <!ENTITY img7 "https://computermania.co.za/v1.0/wp-content/uploads/2017/10/blue1.jpg">
   <!ENTITY img8 "https://www.pro-bg.com/resize_image_max/800/600/PROBG/HDD-SAMSUNG-MZ-V6E1T0BW.jpg">
   <!ENTITY img9 "https://www.pro-bg.com/resize_image_max/800/600/MSI/New-MSI-X99A-GODLIKE-GAMING-CARBON.jpg">
   <!ENTITY img10 "https://www.pro-bg.com/resize_image_max/800/600/GIGABYTE/Desktop-Motherboard-GIGABYTE-MotherboardGIGABYTEH110M-S2PVDDR3sock1151.jpg">
@@ -27,7 +27,7 @@
             <part_image part_id="p4">&img4;</part_image>
             <part_image part_id="p5">&img5;</part_image>
             <part_image part_id="p6">&img6;</part_image>
-
+            <part_image part_id="p7">&img7;</part_image>
             <part_image part_id="p8">&img8;</part_image>
             <part_image part_id="p9">&img9;</part_image>
             <part_image part_id="p10">&img10;</part_image>
