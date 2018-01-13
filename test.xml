@@ -1,18 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!DOCTYPE computer_parts_catalog [
-  <!ENTITY img1 SYSTEM "https://www.pro-bg.com/resize_image_max/800/600/INTEL/CPU-INTEL-BX80684I78700SR3QS.jpg" NDATA jpg>
-  <!ENTITY img2 SYSTEM "https://www.pro-bg.com/resize_image_max/800/600/AMD/CPU-AMD-YD180XBCAEWOF.jpg" NDATA jpg>
-  <!ENTITY img3 SYSTEM "https://www.pro-bg.com/resize_image_max/800/600/CORSAIR/New-CORSAIR-CMR16GX4M2C3200C16.png" NDATA jpg>
-  <!ENTITY img4 SYSTEM "https://www.pro-bg.com/resize_image_max/800/600/KINGSTON/Random-Access-Memory-Memory-Kingston-HyperX-Predator-16GB-2x8GB--DDR4-.jpg" NDATA jpg>
-  <!ENTITY img5 SYSTEM "https://www.pro-bg.com/resize_image_max/800/600/XFX/Videocard-XFX-RX-580P4DFD6.jpg" NDATA jpg>
-  <!ENTITY img6 SYSTEM "https://www.pro-bg.com/resize_image_max/800/600/PALIT/Videocard-PALIT-4710636269318.jpg" NDATA jpg>
-  <!ENTITY img7 SYSTEM "https://www.pro-bg.com/resize_image_max/800/600/WESTERN%20DIGITAL/HDD-WESTERN%20DIGITAL-WDS250G1B0B.jpg" NDATA jpg>
-  <!ENTITY img8 SYSTEM "https://www.pro-bg.com/resize_image_max/800/600/PROBG/HDD-SAMSUNG-MZ-V6E1T0BW.jpg" NDATA jpg>
-  <!ENTITY img9 SYSTEM "https://www.pro-bg.com/resize_image_max/800/600/MSI/New-MSI-X99A-GODLIKE-GAMING-CARBON.jpg" NDATA jpg>
-  <!ENTITY img10 SYSTEM "https://www.pro-bg.com/resize_image_max/800/600/GIGABYTE/Desktop-Motherboard-GIGABYTE-MotherboardGIGABYTEH110M-S2PVDDR3sock1151.jpg" NDATA jpg>
-  <!NOTATION jpg PUBLIC "jpg">
-]>
 <!-- <?xml-stylesheet type="text/xsl" href="index.xsl"?> -->
 
 <computer_parts_catalog xmlns="http://www.w3schools.com"
@@ -166,18 +153,17 @@
     </parts>
 
   <images>
-    <image id="p1" href="img1"/>
-    <image id="p2" href="img2"/>
-    <image id="p3" href="img3"/>
-    <image id="p4" href="img4"/>
-    <image id="p5" href="img5"/>
-    <image id="p6" href="img6"/>
-    <image id="p7" href="img7"/>
-    <image id="p8" href="img8"/>
-    <image id="p9" href="img9"/>
-    <image id="p10" href="img10"/>
+    <image id="p1" href="https://www.pro-bg.com/resize_image_max/800/600/INTEL/CPU-INTEL-BX80684I78700SR3QS.jpg"/>
+    <image id="p2" href="https://www.pro-bg.com/resize_image_max/800/600/AMD/CPU-AMD-YD180XBCAEWOF.jpg"/>
+    <image id="p3" href="https://www.pro-bg.com/resize_image_max/800/600/CORSAIR/New-CORSAIR-CMR16GX4M2C3200C16.png"/>
+    <image id="p4" href="https://www.pro-bg.com/resize_image_max/800/600/KINGSTON/Random-Access-Memory-Memory-Kingston-HyperX-Predator-16GB-2x8GB--DDR4-.jpg"/>
+    <image id="p5" href="https://www.pro-bg.com/resize_image_max/800/600/XFX/Videocard-XFX-RX-580P4DFD6.jpg"/>
+    <image id="p6" href="https://www.pro-bg.com/resize_image_max/800/600/PALIT/Videocard-PALIT-4710636269318.jpg"/>
+    <image id="p7" href="https://www.pro-bg.com/resize_image_max/800/600/WESTERN%20DIGITAL/HDD-WESTERN%20DIGITAL-WDS250G1B0B.jpg"/>
+    <image id="p8" href="https://www.pro-bg.com/resize_image_max/800/600/PROBG/HDD-SAMSUNG-MZ-V6E1T0BW.jpg"/>
+    <image id="p9" href="https://www.pro-bg.com/resize_image_max/800/600/MSI/New-MSI-X99A-GODLIKE-GAMING-CARBON.jpg"/>
+    <image id="p10" href="https://www.pro-bg.com/resize_image_max/800/600/GIGABYTE/Desktop-Motherboard-GIGABYTE-MotherboardGIGABYTEH110M-S2PVDDR3sock1151.jpg"/>
   </images>
-
   <gallery>
     <part_image part_id="p1" image_id="p1" />
     <part_image part_id="p2" image_id="p2" />
