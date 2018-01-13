@@ -166,29 +166,29 @@
     </parts>
 
   <images>
-    <image id="i1" href="img1"/>
-    <image id="i2" href="img2"/>
-    <image id="i3" href="img3"/>
-    <image id="i4" href="img4"/>
-    <image id="i5" href="img5"/>
-    <image id="i6" href="img6"/>
-    <image id="i7" href="img7"/>
-    <image id="i8" href="img8"/>
-    <image id="i9" href="img9"/>
-    <image id="i10" href="img10"/>
+    <image id="p1" href="img1"/>
+    <image id="p2" href="img2"/>
+    <image id="p3" href="img3"/>
+    <image id="p4" href="img4"/>
+    <image id="p5" href="img5"/>
+    <image id="p6" href="img6"/>
+    <image id="p7" href="img7"/>
+    <image id="p8" href="img8"/>
+    <image id="p9" href="img9"/>
+    <image id="p10" href="img10"/>
   </images>
 
   <gallery>
-    <part_image part_id="p1" image_id="i1" />
-    <part_image part_id="p2" image_id="i2" />
-    <part_image part_id="p3" image_id="i3" />
-    <part_image part_id="p4" image_id="i4" />
-    <part_image part_id="p5" image_id="i5" />
-    <part_image part_id="p6" image_id="i6" />
-    <part_image part_id="p7" image_id="i7" />
-    <part_image part_id="p8" image_id="i8" />
-    <part_image part_id="п9" image_id="i9" />
-    <part_image part_id="p10" image_id="i10" />
+    <part_image part_id="p1" image_id="p1" />
+    <part_image part_id="p2" image_id="p2" />
+    <part_image part_id="p3" image_id="p3" />
+    <part_image part_id="p4" image_id="p4" />
+    <part_image part_id="p5" image_id="p5" />
+    <part_image part_id="p6" image_id="p6" />
+    <part_image part_id="p7" image_id="p7" />
+    <part_image part_id="p8" image_id="p8" />
+    <part_image part_id="п9" image_id="p9" />
+    <part_image part_id="p10" image_id="p10" />
   </gallery>
 
 </computer_parts_catalog>

@@ -5,6 +5,8 @@
 	xmlns:x="http://www.w3schools.com"
 	exclude-result-prefixes="x">
 
+	<!-- <xsl:key name="image-url" match="image" use="@id"/> TODO -->
+
 	<xsl:param name="id">h1</xsl:param>
 
 
@@ -24,7 +26,12 @@
 
 <xsl:template match="x:processor | x:ram-stick | x:video-card | x:hard-drive | x:disk | x:motherboard">
 	<ul class="characteristics center">
-		<img src="https://www.pro-bg.com/resize_image_max/800/600/INTEL/CPU-INTEL-BX80684I78700SR3QS.jpg" style="max-height: 200px"/>
+<!--  TODO
+  <xsl:for-each select="key('image-url', $id )">
+		<img src="@href" style="max-height: 200px"/>
+
+		<xsl:value-of select="@href"/>
+  </xsl:for-each> -->
 			<!-- Uppercase first latter of category -->
 		<xsl:variable name="firstChar" select="substring(name(.),1,1)"/>
 		<xsl:variable name="category">
@@ -34,13 +41,45 @@
 		<li>
 			<xsl:value-of select="$category"/>
 			<b>
-				<xsl:value-of select="concat(' ', x:manufacturer, ' ', x:family, ' ', x:model)" />
+				<xsl:value-of
+					select="concat(' ', x:manufacturer, ' ', x:family, ' ', x:model)" />
 			</b>
 		</li>
 
-		<li>Manufacturer: <xsl:value-of select="x:manufacturer" /></li>
+			<xsl:for-each select="*">
+				<li>
+					<xsl:value-of select="concat( name(.), ': ', .)"/>
+				</li>
+			</xsl:for-each>
+			<!--  Bad IDEA -->
+		<!-- <li>Manufacturer: <xsl:value-of select="x:manufacturer" /></li>
 		<li>Price:<xsl:value-of select="x:price" /></li>
 		<li>Available:<xsl:value-of select="x:available" /></li>
+		<xsl:apply-templates select="." mode="other"/> -->
 	</ul>
 </xsl:template>
+<!-- BAD IDEA -->
+<!-- HERE are templates with mode other - for different info about each kind of product -->
+<!-- <xsl:template match="x:processor" mode="other">
+	<li>architecture: <xsl:value-of select="x:architecture" /></li>
+	<li>Model: <xsl:value-of select="x:model" /></li>
+</xsl:template>
+<xsl:template match="x:ram-stick" mode="other">
+	<li>architecture: <xsl:value-of select="x:architecture" /></li>
+	<li>socket:<xsl:value-of select="x:socket" /></li>
+</xsl:template>
+<xsl:template match="x:video-card" mode="other">
+	<li>architecture: <xsl:value-of select="x:architecture" /></li>
+	<li>socket:<xsl:value-of select="x:socket" /></li>
+</xsl:template>
+<xsl:template match="x:disk" mode="other">
+	<li>interface: <xsl:value-of select="x:interface" /></li>
+	<li>Memory:<xsl:value-of select="concat(x:memory/type, x:memory/size, x:memory/speed)" /></li>
+	<li>Size:<xsl:value-of select="x:size" /></li>
+</xsl:template>
+<xsl:template match="x:motherboard" mode="other">
+	<li>Model: <xsl:value-of select="x:model" /></li>
+	<li>socket:<xsl:value-of select="x:socket" /></li>
+</xsl:template> -->
+
 </xsl:stylesheet>
