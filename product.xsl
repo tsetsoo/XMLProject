@@ -5,8 +5,6 @@
 	xmlns:x="http://www.w3schools.com"
 	exclude-result-prefixes="x">
 
-	<xsl:key name="image-urls" match="image" use="@id"/>
-
 	<xsl:param name="id">h1</xsl:param>
 
 
@@ -23,16 +21,18 @@
 		</xsl:if>
 	</xsl:for-each>
 </xsl:template>
+	<xsl:template match="x:part_image">
+	<xsl:if test="@part_id=$id">
+		<img alt="">
+		<xsl:attribute name="src">
+  			<xsl:value-of select="."/>
+ 			</xsl:attribute>
+		</img>
+			</xsl:if>
+	</xsl:template>
 
 <xsl:template match="x:processor | x:ram-stick | x:video-card | x:hard-drive | x:disk | x:motherboard">
 	<ul class="characteristics center">
- <li>
-  <xsl:for-each select="key('image-urls', 'i2' )">
-		<p>he</p>
-		<img src="@href" style="max-height: 200px"/>
-		<xsl:value-of select="@href"/>
-  </xsl:for-each>
-</li>
 			<!-- Uppercase first latter of category -->
 		<xsl:variable name="firstChar" select="substring(name(.),1,1)"/>
 		<xsl:variable name="category">

@@ -93,7 +93,8 @@
 		<td><xsl:value-of select="x:available" /></td>
 		<td><xsl:value-of select="x:price" /></td>
 		<!-- <td><xsl:value-of select="x:stock" /></td> -->
-
 	</xsl:template>
+
+
 
 </xsl:stylesheet>

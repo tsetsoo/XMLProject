@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- <?xml-stylesheet type="text/xsl" href="index.xsl"?> -->
+<?xml-stylesheet type="text/xsl" href="index.xsl"?>
+<!DOCTYPE computer_parts_catalog [
+  <!ENTITY img1 "https://www.pro-bg.com/resize_image_max/800/600/INTEL/CPU-INTEL-BX80684I78700SR3QS.jpg">
+  <!ENTITY img2 "https://www.pro-bg.com/resize_image_max/800/600/AMD/CPU-AMD-YD180XBCAEWOF.jpg">
+  <!ENTITY img3 "https://www.pro-bg.com/resize_image_max/800/600/CORSAIR/New-CORSAIR-CMR16GX4M2C3200C16.png">
+  <!ENTITY img4 "https://www.pro-bg.com/resize_image_max/800/600/KINGSTON/Random-Access-Memory-Memory-Kingston-HyperX-Predator-16GB-2x8GB--DDR4-.jpg">
+  <!ENTITY img5 "https://www.pro-bg.com/resize_image_max/800/600/XFX/Videocard-XFX-RX-580P4DFD6.jpg">
+  <!ENTITY img6 "https://www.pro-bg.com/resize_image_max/800/600/PALIT/Videocard-PALIT-4710636269318.jpg">
+
+  <!ENTITY img8 "https://www.pro-bg.com/resize_image_max/800/600/PROBG/HDD-SAMSUNG-MZ-V6E1T0BW.jpg">
+  <!ENTITY img9 "https://www.pro-bg.com/resize_image_max/800/600/MSI/New-MSI-X99A-GODLIKE-GAMING-CARBON.jpg">
+  <!ENTITY img10 "https://www.pro-bg.com/resize_image_max/800/600/GIGABYTE/Desktop-Motherboard-GIGABYTE-MotherboardGIGABYTEH110M-S2PVDDR3sock1151.jpg">
+  <!NOTATION jpg PUBLIC "jpg">
+]>
+
 
 <computer_parts_catalog xmlns="http://www.w3schools.com"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -152,29 +166,17 @@
         </motherboards>
     </parts>
 
-  <images>
-    <image id="i1" href="https://www.pro-bg.com/resize_image_max/800/600/INTEL/CPU-INTEL-BX80684I78700SR3QS.jpg"/>
-    <image id="i2" href="https://www.pro-bg.com/resize_image_max/800/600/AMD/CPU-AMD-YD180XBCAEWOF.jpg"/>
-    <image id="i3" href="https://www.pro-bg.com/resize_image_max/800/600/CORSAIR/New-CORSAIR-CMR16GX4M2C3200C16.png"/>
-    <image id="i4" href="https://www.pro-bg.com/resize_image_max/800/600/KINGSTON/Random-Access-Memory-Memory-Kingston-HyperX-Predator-16GB-2x8GB--DDR4-.jpg"/>
-    <image id="i5" href="https://www.pro-bg.com/resize_image_max/800/600/XFX/Videocard-XFX-RX-580P4DFD6.jpg"/>
-    <image id="i6" href="https://www.pro-bg.com/resize_image_max/800/600/PALIT/Videocard-PALIT-4710636269318.jpg"/>
-    <image id="i7" href="https://www.pro-bg.com/resize_image_max/800/600/WESTERN%20DIGITAL/HDD-WESTERN%20DIGITAL-WDS250G1B0B.jpg"/>
-    <image id="i8" href="https://www.pro-bg.com/resize_image_max/800/600/PROBG/HDD-SAMSUNG-MZ-V6E1T0BW.jpg"/>
-    <image id="i9" href="https://www.pro-bg.com/resize_image_max/800/600/MSI/New-MSI-X99A-GODLIKE-GAMING-CARBON.jpg"/>
-    <image id="i10" href="https://www.pro-bg.com/resize_image_max/800/600/GIGABYTE/Desktop-Motherboard-GIGABYTE-MotherboardGIGABYTEH110M-S2PVDDR3sock1151.jpg"/>
-  </images>
   <gallery>
-    <part_image part_id="p1" image_id="p1" />
-    <part_image part_id="p2" image_id="p2" />
-    <part_image part_id="p3" image_id="p3" />
-    <part_image part_id="p4" image_id="p4" />
-    <part_image part_id="p5" image_id="p5" />
-    <part_image part_id="p6" image_id="p6" />
-    <part_image part_id="p7" image_id="p7" />
-    <part_image part_id="p8" image_id="p8" />
-    <part_image part_id="п9" image_id="p9" />
-    <part_image part_id="p10" image_id="p10" />
+    <part_image part_id="p1">&img1;</part_image>
+    <part_image part_id="p2">&img2;</part_image>
+    <part_image part_id="p3">&img3;</part_image>
+    <part_image part_id="p4">&img4;</part_image>
+    <part_image part_id="p5">&img5;</part_image>
+    <part_image part_id="p6">&img6;</part_image>
+
+    <part_image part_id="p8">&img8;</part_image>
+    <part_image part_id="p9">&img9;</part_image>
+    <part_image part_id="p10">&img10;</part_image>
   </gallery>
 
 </computer_parts_catalog>
