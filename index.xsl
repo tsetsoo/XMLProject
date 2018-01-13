@@ -8,22 +8,43 @@
 	<xsl:param name="sortKey">available</xsl:param>
 	<xsl:param name="sortOrder">ascending</xsl:param>
 	<xsl:param name="sortType">number</xsl:param>
+
+	<xsl:param name="sortKey-processor">available</xsl:param>
+	<xsl:param name="sortOrder-processor">ascending</xsl:param>
+	<xsl:param name="sortType-processor">number</xsl:param>
+
+	<xsl:param name="sortKey-ram-stick">available</xsl:param>
+	<xsl:param name="sortOrder-ram-stick">ascending</xsl:param>
+	<xsl:param name="sortType-ram-stick">number</xsl:param>
+
+	<xsl:param name="sortKey-video-card">available</xsl:param>
+	<xsl:param name="sortOrder-video-card">ascending</xsl:param>
+	<xsl:param name="sortType-video-card">number</xsl:param>
+
+	<xsl:param name="sortKey-disk">available</xsl:param>
+	<xsl:param name="sortOrder-disk">ascending</xsl:param>
+	<xsl:param name="sortType-disk">number</xsl:param>
+
+	<xsl:param name="sortKey-motherboard">available</xsl:param>
+	<xsl:param name="sortOrder-motherboard">ascending</xsl:param>
+	<xsl:param name="sortType-motherboard">number</xsl:param>
+
 	<!--
 	https://msdn.microsoft.com/en-us/library/ms950787.aspx
-	   <first_name><xsl:value-of select="$first_name"/></first_name>
-	   <last_name><xsl:value-of select="$last_name"/></last_name>
-	   <vocation><xsl:value-of select="$vocation"/></vocation> -->
+	<first_name><xsl:value-of select="$first_name"/></first_name>
+	<last_name><xsl:value-of select="$last_name"/></last_name>
+	<vocation><xsl:value-of select="$vocation"/></vocation> -->
 	<xsl:param name="sortData">
 		<processors>
 
-				<sortKey>available</sortKey>
-				<sortOrder>ascending</sortOrder>
-				<sortType>number</sortType>
+			<sortKey>available</sortKey>
+			<sortOrder>ascending</sortOrder>
+			<sortType>number</sortType>
 		</processors>
 		<video-cards>
-				<sortKey>available</sortKey>
-				<sortOrder>ascending</sortOrder>
-				<sortType>number</sortType>
+			<sortKey>available</sortKey>
+			<sortOrder>ascending</sortOrder>
+			<sortType>number</sortType>
 		</video-cards>
 
 	</xsl:param>
@@ -36,7 +57,7 @@
 			<!-- <xsl:apply-templates select="*" /> -->
 			<xsl:for-each select="*">
 				<!--  TODO how to get $sortData/processors/sortKey?-->
-				<p> <xsl:value-of select="$sortData/processors"/></p>
+				<!-- <p> <xsl:value-of select="$sortData/processors/sortKey"/></p> -->
 				<!-- <xsl:sort select="*[name(.)=$sortKey]|@*[name(.)=$sortKey]|x:price/*[name(.)=$sortKey]" order="{$sortOrder}" data-type="{$sortType}" /> -->
 				<!-- <tr> -->
 				<!-- <xsl:value-of select="$sortData"/> -->
@@ -100,12 +121,70 @@
 				<xsl:with-param name="category" select="name(.)"/>
 			</xsl:call-template>
 		</thead>
-		<xsl:for-each select="x:processor | x:ram-stick | x:video-card | x:hard-drive | x:disk | x:motherboard">
-			<xsl:sort select="*[name(.)=$sortData/processors/sortKey]|@*[name(.)=$sortData/processors/sortKey]" order="{$sortOrder}" data-type="{$sortType}" />
-			<tr>
-				<xsl:apply-templates select="." />
-			</tr>
-		</xsl:for-each>
+		<xsl:choose>
+			<xsl:when test="name(.) = 'processors'">
+
+				<xsl:for-each select="x:processor | x:ram-stick | x:video-card | x:hard-drive | x:disk | x:motherboard">
+					<xsl:sort select="*[name(.)=$sortKey-processor]|@*[name(.)=$sortKey-processor]" order="{$sortOrder-processor}" data-type="{$sortType-processor}" />
+
+					<tr>
+						<xsl:apply-templates select="." />
+					</tr>
+				</xsl:for-each>
+			</xsl:when>
+			<xsl:when test="name(.) = 'ram-sticks'">
+
+				<xsl:for-each select="x:processor | x:ram-stick | x:video-card | x:hard-drive | x:disk | x:motherboard">
+					<xsl:sort select="*[name(.)=$sortKey-ram-stick]|@*[name(.)=$sortKey-ram-stick]" order="{$sortOrder-ram-stick}" data-type="{$sortType-ram-stick}" />
+
+
+					<tr>
+						<xsl:apply-templates select="." />
+					</tr>
+				</xsl:for-each>
+			</xsl:when>
+			<xsl:when test="name(.) = 'video-cards'">
+
+				<xsl:for-each select="x:processor | x:ram-stick | x:video-card | x:hard-drive | x:disk | x:motherboard">
+					<xsl:sort select="*[name(.)=$sortKey-video-card]|@*[name(.)=$sortKey-video-card]" order="{$sortOrder-video-card}" data-type="{$sortType-video-card}" />
+
+					<tr>
+						<xsl:apply-templates select="." />
+					</tr>
+				</xsl:for-each>
+			</xsl:when>
+			<xsl:when test="name(.) = 'disks'">
+
+				<xsl:for-each select="x:processor | x:ram-stick | x:video-card | x:hard-drive | x:disk | x:motherboard">
+					<xsl:sort select="*[name(.)=$sortKey-disk]|@*[name(.)=$sortKey-disk]" order="{$sortOrder-disk}" data-type="{$sortType-disk}" />
+
+					<tr>
+						<xsl:apply-templates select="." />
+					</tr>
+				</xsl:for-each>
+			</xsl:when>
+			<xsl:when test="name(.) = 'motherboards'">
+
+				<xsl:for-each select="x:processor | x:ram-stick | x:video-card | x:hard-drive | x:disk | x:motherboard">
+					<xsl:sort select="*[name(.)=$sortKey-motherboard]|@*[name(.)=$sortKey-motherboard]" order="{$sortOrder-motherboard}" data-type="{$sortType-motherboard}"/>
+
+					<tr>
+						<xsl:apply-templates select="." />
+					</tr>
+				</xsl:for-each>
+			</xsl:when>
+			<xsl:otherwise>
+
+				<xsl:for-each select="x:processor | x:ram-stick | x:video-card | x:hard-drive | x:disk | x:motherboard">
+					<xsl:sort select="*[name(.)=$sortKey]|@*[name(.)=$sortKey]" order="{$sortOrder}" data-type="{$sortType}" />
+
+					<tr>
+						<xsl:apply-templates select="." />
+					</tr>
+				</xsl:for-each>
+			</xsl:otherwise>
+		</xsl:choose>
+
 	</xsl:template>
 	<xsl:template match="x:part_image"/>
 
