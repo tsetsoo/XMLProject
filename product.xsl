@@ -27,7 +27,7 @@
 <xsl:template match="x:processor | x:ram-stick | x:video-card | x:hard-drive | x:disk | x:motherboard">
 	<ul class="characteristics center">
  <li>
-  <xsl:for-each select="key('image-urls', 'p1' )">
+  <xsl:for-each select="key('image-urls', 'i2' )">
 		<p>he</p>
 		<img src="@href" style="max-height: 200px"/>
 		<xsl:value-of select="@href"/>
