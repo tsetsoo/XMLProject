@@ -1,3 +1,12 @@
 img.product-image {
   max-height: 200px;
 }
+
+li.product-name {
+  font-size: 24px;
+  border-bottom: 2px solid #333;
+}
+
+li {
+  text-transform: capitalize;
+}

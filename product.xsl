@@ -39,7 +39,7 @@
 			<xsl:value-of select="translate($firstChar,'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
 			<xsl:value-of select="substring-after(name(.),$firstChar)"/>
 		</xsl:variable>
-		<li>
+		<li class="product-name">
 			<xsl:value-of select="$category"/>
 			<b>
 				<xsl:value-of
@@ -52,12 +52,11 @@
 					<!-- count-childs -->
 					<xsl:when test="count(./*) > 0">
 						<ul>
-							<li><b><xsl:value-of select="name(.)"/></b></li>
+							<li><b><xsl:value-of select="concat(name(.), ': ')"/></b>
 							<xsl:for-each select="*">
-								<li>
-									<xsl:value-of select="concat( name(.), ': ', .)"/>
-								</li>
+									<xsl:value-of select="concat(name(.), ': ', ., ', ')"/>
 							</xsl:for-each>
+						</li>
 						</ul>
 					</xsl:when>
 					<xsl:otherwise>
