@@ -15,7 +15,7 @@
 	<xsl:template match="x:processors | x:ram-sticks | x:video-cards | x:hard-drives | x:disks | x:motherboards">
 		<xsl:for-each select="x:processor | x:ram-stick | x:video-card | x:hard-drive | x:disk | x:motherboard">
 			<xsl:if test="@id=$id"><!-- <xsl:sort select="*[name(.)=$sortKey]|@*[name(.)=$sortKey]|x:price/*[name(.)=$sortKey]" order="{$sortOrder}" data-type="{$sortType}" /> -->
-			<div class="part container">
+			<div class="part">
 				<xsl:apply-templates select="." />
 			</div>
 		</xsl:if>
@@ -23,7 +23,7 @@
 </xsl:template>
 <xsl:template match="x:part_image">
 	<xsl:if test="@part_id=$id">
-		<img alt="">
+		<img style="max-height: 200px;" alt="">
 			<xsl:attribute name="src">
 				<xsl:value-of select="."/>
 			</xsl:attribute>
@@ -32,7 +32,7 @@
 </xsl:template>
 
 <xsl:template match="x:processor | x:ram-stick | x:video-card | x:hard-drive | x:disk | x:motherboard">
-	<ul class="characteristics center">
+	<ul class="characteristics">
 		<!-- Uppercase first latter of category -->
 		<xsl:variable name="firstChar" select="substring(name(.),1,1)"/>
 		<xsl:variable name="category">
