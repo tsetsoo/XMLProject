@@ -5,7 +5,7 @@
 	xmlns:x="http://www.w3schools.com"
 	exclude-result-prefixes="x">
 
-	<xsl:param name="sortKey">stock</xsl:param>
+	<xsl:param name="sortKey">available</xsl:param>
 	<xsl:param name="sortOrder">ascending</xsl:param>
 	<xsl:param name="sortType">number</xsl:param>
 
@@ -16,7 +16,7 @@
 			</thead>
 			<!-- <xsl:apply-templates select="*" /> -->
 			<xsl:for-each select="*">
-				<xsl:sort select="*[name(.)=$sortKey]|@*[name(.)=$sortKey]|x:price/*[name(.)=$sortKey]" order="{$sortOrder}" data-type="{$sortType}" />
+				<!-- <xsl:sort select="*[name(.)=$sortKey]|@*[name(.)=$sortKey]|x:price/*[name(.)=$sortKey]" order="{$sortOrder}" data-type="{$sortType}" /> -->
 				<!-- <tr> -->
 				<xsl:apply-templates select="." />
 				<!-- </tr> -->
@@ -64,7 +64,7 @@
 
 	<xsl:template match="x:processors | x:ram-sticks | x:video-cards | x:hard-drives | x:disks | x:motherboards">
 		<xsl:for-each select="x:processor | x:ram-stick | x:video-card | x:hard-drive | x:disk | x:motherboard">
-			<xsl:sort select="*[name(.)=$sortKey]|@*[name(.)=$sortKey]|x:price/*[name(.)=$sortKey]" order="{$sortOrder}" data-type="{$sortType}" />
+			<xsl:sort select="*[name(.)=$sortKey]|@*[name(.)=$sortKey]" order="{$sortOrder}" data-type="{$sortType}" />
 			<tr>
 				<xsl:apply-templates select="." />
 			</tr>
@@ -91,7 +91,7 @@
 		<td><xsl:value-of select="x:manufacturer" /></td>
 		<!-- <td><xsl:value-of select="x:model" /></td> -->
 		<td><xsl:value-of select="x:available" /></td>
-		<td><xsl:value-of select="x:price" /></td>
+		<td><xsl:value-of select="x:price" /> лв.</td>
 		<!-- <td><xsl:value-of select="x:stock" /></td> -->
 	</xsl:template>
 

@@ -51,7 +51,7 @@
                     <logical>12</logical>
                 </threads>
                 <available>1</available>
-                <price>644.49 лв.</price>
+                <price>644.49</price>
             </processor>
             <processor id="p2">
                 <manufacturer>AMD</manufacturer>
@@ -69,7 +69,7 @@
                     <logical>16</logical>
                 </threads>
                 <available>2</available>
-                <price>940.26 лв.</price>
+                <price>940.26</price>
             </processor>
         </processors>
 
@@ -83,7 +83,7 @@
                   <speed>3200 MHz</speed>
                 </memory>
                 <available>3</available>
-                <price>467.51 лв.</price>
+                <price>467.51</price>
             </ram-stick>
             <ram-stick id="p4">
                 <manufacturer>Kingston</manufacturer>
@@ -94,7 +94,7 @@
                   <speed>3333 MHz</speed>
                 </memory>
                 <available>4</available>
-                <price>438.96 лв.</price>
+                <price>438.96</price>
             </ram-stick>
         </ram-sticks>
 
@@ -114,7 +114,7 @@
                 <texture-fill-rate>193 GT/s</texture-fill-rate>
                 <pixel-fill-rate>42.9 GP/s</pixel-fill-rate>
                 <available>3</available>
-                <price>794.40 лв.</price>
+                <price>794.40</price>
             </video-card>
             <video-card id="p6">
                 <manufacturer>Palit</manufacturer>
@@ -129,8 +129,8 @@
                 <bus-width>192 bit</bus-width>
                 <texture-fill-rate>193 GT/s</texture-fill-rate>
                 <pixel-fill-rate>42.9 GP/s</pixel-fill-rate>
-                <available>3</available>
-                <price>499.91 лв.</price>
+                <available>10</available>
+                <price>499.91</price>
             </video-card>
         </video-cards>
 
@@ -145,7 +145,7 @@
                 </memory>
                 <size>2.5 inch</size>
                 <available>3</available>
-                <price>178.30 лв.</price>
+                <price>178.30</price>
             </disk>
             <disk id="p8">
                 <manufacturer>Samsung</manufacturer>
@@ -156,8 +156,8 @@
                   <speed>NVMe SSD</speed>
                 </memory>
                 <size>PCIe Stick</size>
-                <available>3</available>
-                <price>981.61 лв.</price>
+                <available>4</available>
+                <price>981.61</price>
             </disk>
         </disks>
 
@@ -167,14 +167,14 @@
                 <model>X99</model>
                 <socket>LGA2011</socket>
                 <available>3</available>
-                <price>1019.49 лв.</price>
+                <price>1019.49</price>
             </motherboard>
             <motherboard id="p10">
                 <manufacturer>GIGABYTE</manufacturer>
                 <model>Z270X</model>
                 <socket>LGA1151</socket>
                 <available>3</available>
-                <price>1100.19 лв.</price>
+                <price>1100.19</price>
             </motherboard>
         </motherboards>
     </parts>
