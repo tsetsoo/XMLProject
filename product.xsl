@@ -14,7 +14,7 @@
 
 	<xsl:template match="x:processors | x:ram-sticks | x:video-cards | x:hard-drives | x:disks | x:motherboards">
 		<xsl:for-each select="x:processor | x:ram-stick | x:video-card | x:hard-drive | x:disk | x:motherboard">
-			<xsl:if test="@id=$id"><!-- <xsl:sort select="*[name(.)=$sortKey]|@*[name(.)=$sortKey]|x:price/*[name(.)=$sortKey]" order="{$sortOrder}" data-type="{$sortType}" /> -->
+			<xsl:if test="@id=$id">
 			<div class="part">
 				<xsl:apply-templates select="." />
 			</div>
@@ -49,7 +49,7 @@
 
 			<xsl:for-each select="*">
 				<xsl:choose>
-					<!-- count-childs -->
+					<!-- count-children -->
 					<xsl:when test="count(./*) > 0">
 						<ul>
 							<li><b><xsl:value-of select="concat(name(.), ': ')"/></b>

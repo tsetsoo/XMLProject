@@ -1,7 +1,6 @@
 var xslDoc;
 var xmlDoc;
 var xmlHttpObject;
-// var sortKey = {"name", "category","expiration", "price", "stock"};
 var sortKey =  "available";
 var sortOrder = "ascending";
 var sortType = "number";
@@ -24,37 +23,8 @@ var sortType_disk = "number";
 var sortKey_motherboard = "available";
 var sortOrder_motherboard = "ascending";
 var sortType_motherboard = "number";
-/*
-var sortData = {
-  'processors' : {
-    sortKey: 'available',
-    sortOrder: 'ascending',
-    sortType: 'number',
-  },
-  'ram-sticks' : {
-    sortKey: 'available',
-    sortOrder: 'ascending',
-    sortType: 'number',
-  },
-  'video-cards' : {
-    sortKey: 'available',
-    sortOrder: 'ascending',
-    sortType: 'number',
-  },
-  'disks' : {
-    sortKey: 'available',
-    sortOrder: 'ascending',
-    sortType: 'number',
-  },
-  'motherboards' : {
-    sortKey: 'available',
-    sortOrder: 'ascending',
-    sortType: 'number',
-  },
-}*/
 
-function CreateXmlHttpRequestObject()
-{
+function CreateXmlHttpRequestObject() {
   var xmlObject;
 
   if (window.ActiveXObject) {
@@ -67,8 +37,7 @@ function CreateXmlHttpRequestObject()
   return xmlObject;
 }
 
-function getStyleSheet()
-{
+function getStyleSheet() {
   xmlHttpObject = CreateXmlHttpRequestObject();
   try {
     xmlHttpObject.open('GET', 'index.xsl', false);
@@ -83,10 +52,9 @@ function getStyleSheet()
   }
 }
 
-function getDataFile()
-{
+function getDataFile() {
   xmlHttpObject = CreateXmlHttpRequestObject();
-  xmlHttpObject.open('GET', 'test.xml', false);
+  xmlHttpObject.open('GET', 'product.xml', false);
   xmlHttpObject.send(null);
 
   if (xmlHttpObject.status == 200 || xmlHttpObject.status == 0) {
@@ -96,37 +64,34 @@ function getDataFile()
   }
 }
 
-function doTranslation()
-{
+function doTranslation() {
   try {
     var processor = new XSLTProcessor();
     processor.importStylesheet(xslDoc);
-    console.log('sd');
-    // for (var key in sortData) {
-    //   console.log(key, sortData[key]);
-      processor.setParameter(null, 'sortKey', sortKey);
-      processor.setParameter(null, 'sortOrder', sortOrder);
-      processor.setParameter(null, 'sortType', sortType);
 
-      processor.setParameter(null, 'sortKey-processor', sortKey_processor);
-      processor.setParameter(null, 'sortOrder-processor', sortOrder_processor);
-      processor.setParameter(null, 'sortType-processor', sortType_processor);
+    processor.setParameter(null, 'sortKey', sortKey);
+    processor.setParameter(null, 'sortOrder', sortOrder);
+    processor.setParameter(null, 'sortType', sortType);
 
-      processor.setParameter(null, 'sortKey-ram-stick', sortKey_ram_stick);
-      processor.setParameter(null, 'sortOrder-ram-stick', sortOrder_ram_stick);
-      processor.setParameter(null, 'sortType-ram-stick', sortType_ram_stick);
+    processor.setParameter(null, 'sortKey-processor', sortKey_processor);
+    processor.setParameter(null, 'sortOrder-processor', sortOrder_processor);
+    processor.setParameter(null, 'sortType-processor', sortType_processor);
 
-      processor.setParameter(null, 'sortKey-video-card', sortKey_video_card);
-      processor.setParameter(null, 'sortOrder-video-card', sortOrder_video_card);
-      processor.setParameter(null, 'sortType-video-card', sortType_video_card);
+    processor.setParameter(null, 'sortKey-ram-stick', sortKey_ram_stick);
+    processor.setParameter(null, 'sortOrder-ram-stick', sortOrder_ram_stick);
+    processor.setParameter(null, 'sortType-ram-stick', sortType_ram_stick);
 
-      processor.setParameter(null, 'sortKey-disk', sortKey_disk);
-      processor.setParameter(null, 'sortOrder-disk', sortOrder_disk);
-      processor.setParameter(null, 'sortType-disk', sortType_disk);
+    processor.setParameter(null, 'sortKey-video-card', sortKey_video_card);
+    processor.setParameter(null, 'sortOrder-video-card', sortOrder_video_card);
+    processor.setParameter(null, 'sortType-video-card', sortType_video_card);
 
-      processor.setParameter(null, 'sortKey-motherboard', sortKey_motherboard);
-      processor.setParameter(null, 'sortOrder-motherboard', sortOrder_motherboard);
-      processor.setParameter(null, 'sortType-motherboard', sortType_motherboard);
+    processor.setParameter(null, 'sortKey-disk', sortKey_disk);
+    processor.setParameter(null, 'sortOrder-disk', sortOrder_disk);
+    processor.setParameter(null, 'sortType-disk', sortType_disk);
+
+    processor.setParameter(null, 'sortKey-motherboard', sortKey_motherboard);
+    processor.setParameter(null, 'sortOrder-motherboard', sortOrder_motherboard);
+    processor.setParameter(null, 'sortType-motherboard', sortType_motherboard);
 
     var newDocument = processor.transformToDocument(xmlDoc);
 
@@ -137,16 +102,14 @@ function doTranslation()
 }
 
 
-function initialize()
-{
+function initialize() {
   getStyleSheet();
   getDataFile();
   doTranslation();
 }
 
 
-function sort(which, category)
-{
+function sort(which, category) {
   console.log(category)
   switch (category) {
     case 'processors':
@@ -186,8 +149,7 @@ function sort(which, category)
     current_sortKey = which;
     current_sortOrder = 'ascending';
   }
-  //
-  //
+
   if ( current_sortKey == 'name' || current_sortKey == 'manufacturer' || current_sortKey == 'expiration' ) {
     current_sortType = 'text';
   }
@@ -227,6 +189,5 @@ function sort(which, category)
        sortType = current_sortType;
 
   }
-  // console.log(sortData);
 doTranslation();
 }

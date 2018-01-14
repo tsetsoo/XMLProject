@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE computer_parts_catalog [
-    <!ENTITY img1 SYSTEM "Processor Image" NDATA jpg>
-    <!ENTITY img2 SYSTEM "RAM Image" NDATA jpg>
-    <!ENTITY img3 SYSTEM "Video Card Image" NDATA jpg>
-    <!ENTITY img3 SYSTEM "Drive Image" NDATA jpg>
-    <!ENTITY img4 SYSTEM "Motherboard Image" NDATA jpg>
+  <!ENTITY img1 "">
+  <!ENTITY img2 "">
+  <!ENTITY img3 "">
+  <!ENTITY img4 "">
+  <!ENTITY img5 "">
     <!NOTATION jpg PUBLIC "jpg">
 ]>
 <?xml-stylesheet type="text/xsl" href="16_61913_855271_model_xslt.xsl"?>
@@ -96,20 +96,12 @@
         </motherboards>
     </parts>
 
-  <images>
-    <image id="i1" href="img1"/>
-    <image id="i2" href="img2"/>
-    <image id="i3" href="img3"/>
-    <image id="i4" href="img4"/>
-    <image id="i5" href="img5"/>
-  </images>
-
   <gallery>
-    <part_image part_id="p1" image_id="i1" />
-    <part_image part_id="p2" image_id="i2" />
-    <part_image part_id="p3" image_id="i3" />
-    <part_image part_id="p4" image_id="i4" />
-    <part_image part_id="p5" image_id="i5" />
+    <part_image part_id="p1">&img1;</part_image>
+    <part_image part_id="p2">&img2;</part_image>
+    <part_image part_id="p3">&img3;</part_image>
+    <part_image part_id="p4">&img4;</part_image>
+    <part_image part_id="p5">&img5;</part_image>
   </gallery>
 
 </computer_parts_catalog>

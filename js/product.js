@@ -1,7 +1,6 @@
 var xslDoc;
 var xmlDoc;
 var xmlHttpObj;
-// var sortKey = {'name', "category","expiration", "price", "stock"};
 var  sortKey =  "name";
 var id = "";
 var sortOrder = 'ascending'
@@ -40,7 +39,7 @@ function getStyleSheet()
 function getDataFile()
 {
   xmlHttpObj = CreateXmlHttpRequestObject();
-  xmlHttpObj.open('GET', 'test.xml', false);
+  xmlHttpObj.open('GET', 'product.xml', false);
   xmlHttpObj.send(null);
   console.log(xmlHttpObj);
   if (xmlHttpObj.status == 200 || xmlHttpObj.status == 0) {
@@ -78,9 +77,3 @@ function initialize()
 function getURLParameter(name) {
   return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
 }
-
-$( document ).ready(function() {
-  $('th').click( function() {
-    alert("asdasdasd");
-  });
-});

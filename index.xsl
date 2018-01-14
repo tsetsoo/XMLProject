@@ -29,11 +29,6 @@
 	<xsl:param name="sortOrder-motherboard">ascending</xsl:param>
 	<xsl:param name="sortType-motherboard">number</xsl:param>
 
-	<!--
-	https://msdn.microsoft.com/en-us/library/ms950787.aspx
-	<first_name><xsl:value-of select="$first_name"/></first_name>
-	<last_name><xsl:value-of select="$last_name"/></last_name>
-	<vocation><xsl:value-of select="$vocation"/></vocation> -->
 	<xsl:param name="sortData">
 		<processors>
 
@@ -52,17 +47,9 @@
 	<xsl:template match="/">
 		<table border="0" class="sortable">
 			<thead>
-				<!-- <xsl:call-template name="create_header" /> -->
 			</thead>
-			<!-- <xsl:apply-templates select="*" /> -->
 			<xsl:for-each select="*">
-				<!--  TODO how to get $sortData/processors/sortKey?-->
-				<!-- <p> <xsl:value-of select="$sortData/processors/sortKey"/></p> -->
-				<!-- <xsl:sort select="*[name(.)=$sortKey]|@*[name(.)=$sortKey]|x:price/*[name(.)=$sortKey]" order="{$sortOrder}" data-type="{$sortType}" /> -->
-				<!-- <tr> -->
-				<!-- <xsl:value-of select="$sortData"/> -->
 				<xsl:apply-templates select="." />
-				<!-- </tr> -->
 			</xsl:for-each>
 		</table>
 	</xsl:template>
@@ -231,15 +218,9 @@
 			<a href="product.html?id={$request_id}">
 				<xsl:value-of select="concat(x:manufacturer, ' ', x:family, ' ', x:model)" />
 			</a>
-			<!-- <br /> -->
 		</td>
 		<td><xsl:value-of select="x:manufacturer" /></td>
-		<!-- <td><xsl:value-of select="x:model" /></td> -->
 		<td><xsl:value-of select="x:available" /></td>
 		<td><xsl:value-of select="x:price" /> лв.</td>
-		<!-- <td><xsl:value-of select="x:stock" /></td> -->
 	</xsl:template>
-
-
-
 </xsl:stylesheet>
