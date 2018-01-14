@@ -74,24 +74,28 @@
 				<a href="javascript:sort('manufacturer', '{$category}')">Name</a>
 				<xsl:call-template name="show_sorting">
 					<xsl:with-param name="header" select="'manufacturer'" />
+					<xsl:with-param name="category" select="$category"/>
 				</xsl:call-template>
 			</th>
 			<th>
 				<a href="javascript:sort('manufacturer', '{$category}')">Manufacturer</a>
 				<xsl:call-template name="show_sorting">
 					<xsl:with-param name="header" select="'manufacturer'" />
+					<xsl:with-param name="category" select="$category"/>
 				</xsl:call-template>
 			</th>
 			<th>
 				<a href="javascript:sort('available', '{$category}')">Available</a>
 				<xsl:call-template name="show_sorting">
 					<xsl:with-param name="header" select="'available'" />
+					<xsl:with-param name="category" select="$category"/>
 				</xsl:call-template>
 			</th>
 			<th>
 				<a href="javascript:sort('price', '{$category}')">Price</a>
 				<xsl:call-template name="show_sorting">
 					<xsl:with-param name="header" select="'price'" />
+					<xsl:with-param name="category" select="$category"/>
 				</xsl:call-template>
 			</th>
 		</tr>
@@ -99,10 +103,41 @@
 
 	<xsl:template name="show_sorting">
 		<xsl:param name="header" />
-		<xsl:if test="$sortKey = $header">
-			<xsl:if test="$sortOrder = 'ascending'">&#x25B4;</xsl:if>
-			<xsl:if test="$sortOrder = 'descending'">&#x25BE;</xsl:if>
-		</xsl:if>
+		<xsl:param name="category"/>
+		<xsl:choose>
+			<xsl:when test="$category = 'processors'">
+				<xsl:if test="$sortKey-processor = $header">
+					<xsl:if test="$sortOrder-processor = 'ascending'">&#x25B4;</xsl:if>
+					<xsl:if test="$sortOrder-processor = 'descending'">&#x25BE;</xsl:if>
+				</xsl:if>
+			</xsl:when>
+			<xsl:when test="$category = 'ram-sticks'">
+				<xsl:if test="$sortKey-ram-stick = $header">
+					<xsl:if test="$sortOrder-ram-stick = 'ascending'">&#x25B4;</xsl:if>
+					<xsl:if test="$sortOrder-ram-stick = 'descending'">&#x25BE;</xsl:if>
+				</xsl:if>
+			</xsl:when>
+			<xsl:when test="$category = 'video-cards'">
+				<xsl:if test="$sortKey-video-card = $header">
+					<xsl:if test="$sortOrder-video-card = 'ascending'">&#x25B4;</xsl:if>
+					<xsl:if test="$sortOrder-video-card = 'descending'">&#x25BE;</xsl:if>
+				</xsl:if>
+			</xsl:when>
+			<xsl:when test="$category = 'disks'">
+				<xsl:if test="$sortKey-disk = $header">
+					<xsl:if test="$sortOrder-disk = 'ascending'">&#x25B4;</xsl:if>
+					<xsl:if test="$sortOrder-disk = 'descending'">&#x25BE;</xsl:if>
+				</xsl:if>
+			</xsl:when>
+			<xsl:when test="$category = 'motherboards'">
+				<xsl:if test="$sortKey-motherboard = $header">
+					<xsl:if test="$sortOrder-motherboard = 'ascending'">&#x25B4;</xsl:if>
+					<xsl:if test="$sortOrder-motherboard = 'descending'">&#x25BE;</xsl:if>
+				</xsl:if>
+			</xsl:when>
+
+ 		</xsl:choose>
+
 	</xsl:template>
 
 	<xsl:template match="x:processors | x:ram-sticks | x:video-cards | x:hard-drives | x:disks | x:motherboards">
